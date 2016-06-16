@@ -10,11 +10,13 @@ repo enable customers to control the functionality using the API.
 ##Usage
 
 Clone this repository:
-```git clone
-https://github.com/skyscape-cloud-services/vcloud-independent-disks```
+
+```
+git clone https://github.com/skyscape-cloud-services/vcloud-independent-disks
 ```
 
 Edit demo.rb to include your credentials:
+
 ```
 vcdconfig= {
   :user => '<vcloud_user_id>',
@@ -26,9 +28,15 @@ vcdconfig= {
   :ckscarpenter@gmail.com vm => '<vm_in_vapp_name>'
 }
 ```
+
 Then install gem depencies:
-```bundle install```
+
+```
+bundle install
+```
 
 And run using:
 
-```bundle exec ruby demo.rb```
+```
+bundle exec ruby demo.rb
+```
