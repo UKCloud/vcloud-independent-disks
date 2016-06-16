@@ -25,7 +25,7 @@ vcdconfig= {
   :url => 'https://<api address>',
   :vdc => '<vdc_name>',
   :vapp => '<vapp_name>',
-  :ckscarpenter@gmail.com vm => '<vm_in_vapp_name>'
+  :vm => '<vm_in_vapp_name>'
 }
 ```
 
