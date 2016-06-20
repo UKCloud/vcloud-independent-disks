@@ -15,13 +15,17 @@ attr_accessor :vdc
     vm = vapp.find_vm_by_name(vm_name)
   end
 
-  def create_independent_disk(name,size)
+  def create_independent_disk(name,size, storage_profile = nil)
     begin
       puts "Looking For Disk: #{name}"
       disk = @vdc.find_disks_by_name(name).first
     rescue Exception => e
       puts "Disk Not Found, Creating"
-      disk = @vdc.create_disk(name,size)
+      if storage_profile then
+        disk = @vdc.create_disk(name,size,nil,'scsi','lsilogic',storage_profile)
+      else
+        disk = @vdc.create_disk(name,size)
+      end
     end
     disk
   end
@@ -57,6 +61,12 @@ attr_accessor :vdc
 
   def list_disks
     @vdc.list_disks
+  end
+
+
+  def get_storage_profile_by_name(profile_name)
+
+    profile = @vdc.find_storage_profile_by_name(profile_name)
   end
 
 end
