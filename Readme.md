@@ -25,7 +25,8 @@ vcdconfig= {
   :url => 'https://<api address>',
   :vdc => '<vdc_name>',
   :vapp => '<vapp_name>',
-  :vm => '<vm_in_vapp_name>'
+  :vm => '<vm_in_vapp_name>',
+  :storage_profile => '<storage_profile_name>'
 }
 ```
 
@@ -39,4 +40,21 @@ And run using:
 
 ```
 bundle exec ruby demo.rb
+```
+
+
+n.b the Gemfile for this project references a local copy of
+'ruby_vcloud_sdk'.
+This is because UKCloud have added functionality for sotring independent
+disks on different underlying storage profiles to the library. Until
+VMware accept the following Pull Request
+(https://github.com/vchs/ruby_vcloud_sdk/pull/16/), you will need to
+clone the UKCloud ruby_vcloud_sdk and checkout the correct branch.
+
+from the parent directory of this repository:
+```
+git clone git@github.com:UKCloud/ruby_vcloud_sdk.git
+cd ruby_vcloud_sdk
+git checkout indy_disk_storage
+
 ```
